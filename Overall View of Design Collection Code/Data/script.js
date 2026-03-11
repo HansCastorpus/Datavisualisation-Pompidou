@@ -9,16 +9,16 @@ d3.json("Data/data.json", function (data) {
       .attr("height", height);
   
     var uniqueDataTotalTextAcquisition = Array.from(
-      new Set(data.map((d) => d.TotalAcquisition))
-    ).map((TotalAcquisition) => {
-      return data.find((d) => d.TotalAcquisition === TotalAcquisition);
+      new Set(data.map((d) => d.Acquisition))
+    ).map((Acquisition) => {
+      return data.find((d) => d.Acquisition === Acquisition);
     });
   
-    var uniqueDataTotalTextCreation = Array.from(
-      new Set(data.map((d) => d.TotalCreation))
-    ).map((TotalCreation) => {
-      return data.find((d) => d.TotalCreation === TotalCreation);
-    });
+var uniqueDataTotalTextCreation = Array.from(
+  new Set(data.map((d) => d.Creation))  // ✅ deduping by date
+).map((Creation) => {
+  return data.find((d) => d.Creation === Creation);
+});
   
     var uniqueData = Array.from(new Set(data.map((d) => d.Creation))).map(
       (Creation) => {
@@ -60,21 +60,42 @@ d3.json("Data/data.json", function (data) {
   
     var creationColorHighlight = "royalblue";
   
-    var font = "12";
+    var font = "18";
+
+    var fontHighlight = "19";
+
+    var fontHighlightOrigin = "75";
   
     var lineColor = "#042f4d";
   
-    var lineWidth = "0.1";
+    var lineWidth = "0.2";
   
     var strokeWidth = "2";
   
-    var lineOpacity = "90";
+    var lineOpacity = "0.4";
   
     var fontColor = "#302d2b";
   
     var strokeColorCreation = "orange";
   
-    var strokeColorAcquisition = "royalblue";
+    var strokeColorAcquisition = "blue";
+
+    // Pre-calculate sorted x positions for creation dates
+var creationXPositions = uniqueData.map(d => widthScale(d.Creation)).sort((a, b) => a - b);
+var acquisitionXPositions = uniqueData2.map(d => widthScale(d.Acquisition)).sort((a, b) => a - b);
+
+function dynamicFontSize(xPos, sortedPositions, text, maxFont) {
+  var index = sortedPositions.indexOf(xPos);
+  var left = index > 0 ? xPos - sortedPositions[index - 1] : Infinity;
+  var right = index < sortedPositions.length - 1 ? sortedPositions[index + 1] - xPos : Infinity;
+  var availableSpace = Math.min(left, right);
+  var charWidth = maxFont * 0.6;
+  var textWidth = String(text).length * charWidth;
+  if (textWidth > availableSpace) {
+    return Math.max(8, (availableSpace / String(text).length) / 0.6);
+  }
+  return maxFont;
+}
   
     // Track last hovered items
     var lastCreation = null;
@@ -105,6 +126,7 @@ d3.json("Data/data.json", function (data) {
     }
   
     // Function to highlight creation
+    
     function highlightCreation(d) {
       resetAll();
       lastCreation = d.Creation;
@@ -153,6 +175,7 @@ d3.json("Data/data.json", function (data) {
     }
   
     // Function to highlight acquisition
+
     function highlightAcquisition(d) {
       resetAll();
       lastAcquisition = d.Acquisition;
@@ -204,6 +227,8 @@ d3.json("Data/data.json", function (data) {
         .style("display", "block");
     }
   
+// Lines between DATES
+
     group
       .selectAll("line")
       .data(data)
@@ -212,7 +237,7 @@ d3.json("Data/data.json", function (data) {
       .attr("x1", function (d) {
         return widthScale(d.Creation);
       })
-      .attr("y1", 100)
+      .attr("y1", 130)
       .attr("x2", function (d) {
         return widthScale(d.Acquisition);
       })
@@ -220,6 +245,7 @@ d3.json("Data/data.json", function (data) {
       .attr("stroke", lineColor)
       .attr("stroke-width", lineWidth)
       .attr("stroke-linecap", "round")
+      .attr("opacity", lineOpacity)
       .attr("id", function (d) {
         return "line-" + d.Creation;
       });
@@ -260,7 +286,7 @@ d3.json("Data/data.json", function (data) {
       .append("text")
       .attr("y", 85)
       .attr("x", function (d) {
-        return widthScale(d.Creation) - 15;
+        return widthScale(d.Creation) - 45;
       })
       .text(function (d) {
         return d.Creation;
@@ -287,7 +313,7 @@ d3.json("Data/data.json", function (data) {
       .attr("x", function (d) {
         return widthScale(d.Acquisition) - 5;
       })
-      .attr("y", 365)
+      .attr("y", 395)
       .attr("width", 10)
       .attr("height", function (d) {
         return d.TotalAcquisition;
@@ -310,7 +336,7 @@ d3.json("Data/data.json", function (data) {
       .attr("fill", fontColor)
       .attr("y", 405)
       .attr("x", function (d) {
-        return widthScale(d.Acquisition) + 55;
+        return widthScale(d.Acquisition) + 40;
       })
       .text(function (d) {
         return d.Acquisition;
@@ -325,67 +351,71 @@ d3.json("Data/data.json", function (data) {
         highlightAcquisition(d);
       });
   
-    //CREATION INFO PRECISE
-  
-    group4
-      .selectAll("text")
-      .data(data)
-      .enter()
-      .append("text")
-      .attr("fill", fontColor)
-      .attr("y", 63)
-      .attr("x", function (d) {
-        return widthScale(d.Creation);
-      })
-      .text(function (d) {
-        return d.CreationQuantity;
-      })
-      .attr("font-size", font - 2)
-      .style("font-family", "Josefin Sans, sans-serif")
-      .attr("fill", fontColor)
-      .attr("text-anchor", "middle")
-      .style("display", "none");
-  
-    //ACQUISITION INFO PRECISE
-  
-    group5
-      .selectAll("text")
-      .data(data)
-      .enter()
-      .append("text")
-      .attr("fill", fontColor)
-      .attr("y", 443)
-      .attr("x", function (d) {
-        return widthScale(d.Acquisition);
-      })
-      .text(function (d) {
-        return d.AcquisitionQuantity;
-      })
-      .attr("font-size", font - 2)
-      .attr("fill", "fontColor")
-      .attr("text-anchor", "middle")
-      .style("font-family", "Josefin Sans, sans-serif")
-      .style("display", "none");
-  
-    group6
-      .selectAll("rect")
-      .data(data)
-      .enter()
-      .append("rect")
-      .attr("x", function (d) {
-        return widthScale(d.Creation) - 5;
-      })
-      .attr("y", function (d) {
-        return 50 - d.TotalCreation;
-      })
-      .attr("width", 10)
-      .attr("height", function (d) {
-        return d.TotalCreation;
-      })
-      .attr("fill", creationColor)
-      .attr("id", function (d) {
-        return "rect-" + d.Creation;
-      });
+//CREATION INFO PRECISE
+
+group4
+  .selectAll("text")
+  .data(data)
+  .enter()
+  .append("text")
+  .attr("fill", fontColor)
+  .attr("y", 75)
+  .attr("x", function (d) {
+    return widthScale(d.Creation);
+  })
+  .text(function (d) {
+    return d.CreationQuantity;
+  })
+  .attr("font-size", function(d) {
+    var xPos = widthScale(d.Creation);
+    return dynamicFontSize(xPos, creationXPositions, d.CreationQuantity, fontHighlight);
+  })
+  .style("font-family", "Josefin Sans, sans-serif")
+  .attr("fill", fontColor)
+  .attr("text-anchor", "middle")
+  .style("display", "none");
+
+//ACQUISITION INFO PRECISE
+
+group5
+  .selectAll("text")
+  .data(data)
+  .enter()
+  .append("text")
+  .attr("fill", fontColor)
+  .attr("y", 468)
+  .attr("x", function (d) {
+    return widthScale(d.Acquisition);
+  })
+  .text(function (d) {
+    return d.AcquisitionQuantity;
+  })
+  .attr("font-size", function(d) {
+    var xPos = widthScale(d.Acquisition);
+    return dynamicFontSize(xPos, acquisitionXPositions, d.AcquisitionQuantity, fontHighlight);
+  })
+  .attr("text-anchor", "middle")
+  .style("font-family", "Josefin Sans, sans-serif")
+  .style("display", "none");
+    // group6
+    //   .selectAll("rect")
+    //   .data(data)
+    //   .enter()
+    //   .append("rect")
+    //   .attr("x", function (d) {
+    //     return widthScale(d.Creation) - 5;
+    //   })
+    //   .attr("y", function (d) {
+    //     return 50 - d.TotalCreation;
+    //   })
+    //   .attr("width", 10)
+    //   .attr("height", function (d) {
+    //     return d.TotalCreation;
+    //   })
+    //   .attr("fill", creationColor)
+    //   .attr("id", function (d) {
+    //     return "rect-" + d.Creation;
+    //   });
   
     group7Text
       .selectAll("text")
@@ -394,15 +424,15 @@ d3.json("Data/data.json", function (data) {
       .append("text")
       .attr("fill", fontColor)
       .style("font-family", "Josefin Sans, sans-serif")
-      .attr("y", 443)
+      .attr("y", 465)
       .attr("x", function (d) {
         return widthScale(d.Acquisition);
       })
       .text(function (d) {
         return d.TotalAcquisition;
       })
-      .attr("font-size", font - 2)
-      .attr("fill", fontColor)
+      .attr("font-size", fontHighlightOrigin)
+      .attr("fill", "red")
       .attr("text-anchor", "middle")
       .style("display", "none");
   
@@ -412,15 +442,15 @@ d3.json("Data/data.json", function (data) {
       .enter()
       .append("text")
       .attr("fill", fontColor)
-      .attr("y", 63)
+      .attr("y", 110)
       .attr("x", function (d) {
         return widthScale(d.Creation);
       })
       .text(function (d) {
         return d.TotalCreation;
       })
-      .attr("font-size", font - 2)
-      .attr("fill", fontColor)
+      .attr("font-size", fontHighlightOrigin)
+      .attr("fill", "red")
       .attr("text-anchor", "middle")
       .style("display", "none")
       .style("font-family", "Josefin Sans, sans-serif");

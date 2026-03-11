@@ -59,7 +59,7 @@
   position: relative;
   display: flex;
   align-items: flex-start;
-  top: -454px;
+  top: -424px;
   left: 86px;
   font-family: var(--font-josefin);
   font-size: 1.5em;
@@ -507,7 +507,7 @@
 .A-Technologie10 { height: 12px; }
 .A-Architecture10 { height: 5px; }
 .ChartA10 { left: -115px; top: 1846px; }
-.ChartA10Bis { top: 292px; left: -567px; }
+.ChartA10Bis { top: 269px; left: -567px; }
 
 /* Chart A11 */
 .DecadeBarChartA11 { width: 171.2px; height: 1803px; left: -392.3px; }
@@ -520,7 +520,7 @@
 .A-Technologie11 { height: 21px; }
 .A-Architecture11 { height: 13px; }
 .ChartA11 { left: -220px; top: 1807px; }
-.ChartA11Bis { top: 292px; left: -782px; }
+.ChartA11Bis { top: 269px; left: -782px; }
 
 /* Chart A12 */
 .DecadeBarChartA12 { margin-left: 1px; width: 171px; height: 3378px; left: -504.2px; }
@@ -533,7 +533,7 @@
 .A-Technologie12 { height: 66px; }
 .A-Architecture12 { height: 13px; }
 .ChartA12 { left: -327px; top: 3382px; }
-.ChartA12Bis { top: 292px; left: -999px; }
+.ChartA12Bis { top: 269px; left: -999px; }
 
 /* Chart A13 */
 .DecadeBarChartA13 { width: 46px; height: 207px; left: -550.5px; }
@@ -557,25 +557,25 @@
 
 .underline {
   position: relative;
-  border: solid 1px var(--color-mobilier);
+  border: solid 1px var(--color-text);
   width: 330px;
-  top: 320px;
+  top: 295px;
   left: -1486px;
 }
 
 .line1 {
   position: relative;
-  border: solid 1px var(--color-mobilier);
+  border: solid 1px var(--color-text);
   height: 15px;
-  top: 304px;
+  top: 278px;
   left: -1757px;
 }
 
 .line2 {
   position: relative;
-  border: solid 1px var(--color-mobilier);
+  border: solid 1px var(--color-text);
   height: 15px;
-  top: 304px;
+  top: 278px;
   left: -1695px;
 }
 

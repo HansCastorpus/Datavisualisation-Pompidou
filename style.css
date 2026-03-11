@@ -5,7 +5,7 @@
   --color-background-light: #eee9e1;
   --color-text-light: ##293439;
   --color-text-dark: #231f20;
-  --color-text-body: #1c1d1f;
+  --color-text-body: #24262b;
   
   /* Design Category Colors */
   --color-architecture: #91a879;
@@ -309,12 +309,13 @@ body {
 
 .map_background {
   position: relative;
-  background-color: var(--color-background-light);
+  background-color: #b6c9df;
   width: 2639px;
   height: 1039px;
   left: -152px;
   top: 4054px;
   border-radius: var(--radius-large);
+  border: 1px solid #10344c;
 }
 
 .total_background {
