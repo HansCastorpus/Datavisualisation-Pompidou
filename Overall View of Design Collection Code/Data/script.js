@@ -58,7 +58,7 @@ var uniqueDataTotalTextCreation = Array.from(
   
     var creationColor = "#111f30";
   
-    var creationColorHighlight = "royalblue";
+    var creationColorHighlight = "orange";
   
     var font = "18";
 
@@ -66,19 +66,19 @@ var uniqueDataTotalTextCreation = Array.from(
 
     var fontHighlightOrigin = "75";
   
-    var lineColor = "#042f4d";
+    var lineColor = "#677c6e";
   
-    var lineWidth = "0.2";
+    var lineWidth = "0.15";
   
-    var strokeWidth = "2";
+    var strokeWidth = "1";
   
-    var lineOpacity = "0.4";
+    var lineOpacity = "1";
   
     var fontColor = "#302d2b";
   
-    var strokeColorCreation = "orange";
+    var strokeColorCreation = "#3150ff";
   
-    var strokeColorAcquisition = "blue";
+    var strokeColorAcquisition = "#ff0000";
 
     // Pre-calculate sorted x positions for creation dates
 var creationXPositions = uniqueData.map(d => widthScale(d.Creation)).sort((a, b) => a - b);
@@ -450,9 +450,11 @@ group5
         return d.TotalCreation;
       })
       .attr("font-size", fontHighlightOrigin)
-      .attr("fill", "red")
+      .attr("fill", strokeColorCreation)
       .attr("text-anchor", "middle")
       .style("display", "none")
       .style("font-family", "Josefin Sans, sans-serif");
   
   });
+
+  
