@@ -1,0 +1,476 @@
+/* CSS Variables */
+:root {
+  /* Colors */
+  --color-background: #d6cec1;
+  --color-background-light: #eee9e1;
+  --color-text-light: ##293439;
+  --color-text-dark: #231f20;
+  --color-text-body: #1c1d1f;
+  
+  /* Design Category Colors */
+  --color-architecture: #91a879;
+  --color-mobilier: #c6bca2;
+  --color-graphique: #da3035;
+  --color-objet: #8d2438;
+  --color-industriel: #e7a02c;
+  --color-technologie: #83b7ca;
+  --color-vestimentaire: #1a4d8b;
+  --color-other: #266af1;
+  
+  /* Fonts */
+  --font-jost: "Jost", sans-serif;
+  --font-josefin: "Josefin Sans", sans-serif;
+  
+  /* Font Sizes */
+  --font-size-small: 17pt;
+  --font-size-medium: 20px;
+  --font-size-large: 29pt;
+  --font-size-xlarge: 34pt;
+  --font-size-xxlarge: 38pt;
+  --font-size-hero: 25em;
+  
+  /* Spacing */
+  --spacing-small: 7px;
+  --spacing-medium: 15px;
+  --spacing-large: 20px;
+  --spacing-xlarge: 25px;
+  
+  /* Border Radius */
+  --radius-large: 50px;
+  
+  /* Line Height */
+  --line-height-base: 1.2;
+  
+  /* Responsive scaling - Default values for large screens */
+  --scale-factor: 0.9;
+  --left-position: 200px;
+  --top-position: 0;
+}
+
+/* ==================== MEDIA QUERIES ==================== */
+
+/* Medium screens - 1920px */
+@media (max-width: 1920px) {
+  :root {
+    --scale-factor: 0.76;
+    --left-position: 40px;
+    --top-position: 20px;
+  }
+}
+
+/* Medium screens - 1440px */
+@media (max-width: 1440px) {
+  :root {
+    --scale-factor: 0.594;
+    --left-position: 2px;
+    --top-position: 0;
+  }
+}
+
+/* Medium screens - 1024px */
+@media (max-width: 1024px) {
+  :root {
+    --scale-factor: 0.41;
+    --left-position: 2px;
+    --top-position: 0;
+  }
+}
+
+/* Small screens - 768px */
+@media (max-width: 768px) {
+  :root {
+    --scale-factor: 0.4;
+    --left-position: 10px;
+    --top-position: 0;
+  }
+}
+
+/* Extra small screens - 480px */
+@media (max-width: 480px) {
+  :root {
+    --scale-factor: 0.3;
+    --left-position: 50px;
+    --top-position: 0;
+  }
+}
+
+/* ==================== BASE STYLES ==================== */
+
+body {
+  position: absolute;
+  left: var(--left-position);
+  top: var(--top-position);
+  background-color: var(--color-background);
+  transform-origin: top left;
+  width: 100%;
+  height: 100%;
+  transform: scale(var(--scale-factor));
+}
+
+.frame {
+  display: flex;
+  flex-direction: column;
+}
+
+.pixel {
+  position: absolute;
+  opacity: 0.3;
+  top: 8px;
+  left: var(--spacing-small);
+}
+
+/* ==================== TYPOGRAPHY ==================== */
+
+/* Title Styles */
+.Titre,
+.Titre2 {
+  font-family: var(--font-josefin);
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: var(--font-size-large);
+  line-height: var(--line-height-base);
+  width: 1000px;
+}
+
+.Titre2 {
+  position: absolute;
+  left: 0px;
+}
+
+/* Content Styles */
+.Contenu,
+.Contenu2 {
+  position: absolute;
+  top: 106px;
+  width: 543px;
+  font-family: var(--font-jost);
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-base);
+}
+
+.Contenu2 {
+  left: 567px;
+}
+
+/* Section Headers */
+.Acquisition,
+.Creation {
+  position: absolute;
+  left: 30px;
+  font-family: var(--font-josefin);
+  font-weight: 500;
+  font-size: var(--font-size-xlarge);
+  color: var(--color-text-light);
+}
+
+.Creation {
+  top: 1338px;
+}
+
+.Acquisition {
+  top: 1674px;
+}
+
+.centre {
+  position: absolute;
+  top: 39px;
+  left: 22px;
+  font-family: var(--font-josefin);
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-size: var(--font-size-hero);
+  line-height: var(--line-height-base);
+  width: 1300px;
+  color: var(--color-text-dark);
+}
+
+.titre {
+  position: absolute;
+  top: 505px;
+  left: 1198px;
+  font-family: var(--font-josefin);
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: var(--font-size-xxlarge);
+  line-height: var(--line-height-base);
+  width: 1300px;
+  color: var(--color-text-dark);
+}
+
+.info_line {
+  top: 3595px;
+  left: 1381px;
+  position: relative;
+  color: var(--color-text-light);
+  font-family: var(--font-jost);
+  font-size: var(--font-size-small);
+}
+
+/* ==================== SECTION LABELS ==================== */
+
+.Overview {
+  position: absolute;
+  top: 1634px;
+  left: 61px;
+  color: var(--color-text-light);
+}
+
+.Detail {
+  position: absolute;
+  top: 3554px;
+  color: var(--color-text-light);
+  left: 61px;
+}
+
+.Map {
+  position: absolute;
+  top: 6675px;
+  color: var(--color-text-light);
+  left: 1763px;
+  display: none;
+}
+
+.Designers {
+  position: absolute;
+  top: 6350px;
+  color: var(--color-text-light);
+  left: 61px;
+}
+
+.TotalDesigners {
+  position: absolute;
+  color: var(--color-text-body);
+  top: 7741px;
+  left: 1762px;
+}
+
+/* ==================== MAIN SECTIONS ==================== */
+
+.DesignOverall {
+  position: absolute;
+  overflow-x: hidden;
+  width: 3390px;
+  top: 836px;
+  z-index: 1000;
+}
+
+.DesignDetail {
+  position: absolute;
+  top: 3757px;
+  left: -47px;
+  z-index: 1000;
+  display: none;
+}
+
+.texttotal {
+  position: relative;
+  top: -677px;
+  z-index: 500;
+}
+
+.Carte {
+  position: absolute;
+  top: 3300px;
+  left: -114px;
+  z-index: 100;
+}
+
+.DesignersQuantity {
+  position: absolute;
+  top: 6258px;
+  left: 637px;
+}
+
+.Total {
+  position: absolute;
+  top: 7744px;
+  left: 3px;
+  transform: scale(0.95);
+  z-index: 1000;
+}
+
+.logo {
+  position: absolute;
+  top: 61px;
+  left: 62px;
+}
+
+/* ==================== BACKGROUND SECTIONS ==================== */
+
+.header_background {
+  background-color: var(--color-background-light);
+  border-radius: 0px 0px var(--radius-large) var(--radius-large);
+  width: 2349px;
+  left: 8px;
+  height: 719px;
+}
+
+.map_background {
+  position: relative;
+  background-color: var(--color-background-light);
+  width: 2639px;
+  height: 1039px;
+  left: -152px;
+  top: 4054px;
+  border-radius: var(--radius-large);
+}
+
+.total_background {
+  position: relative;
+  background-color: var(--color-background-light);
+  width: 2349px;
+  height: 2019px;
+  top: 5904px;
+  left: 8px;
+  border-radius: var(--radius-large);
+}
+
+/* ==================== LEGEND ==================== */
+
+.legend {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  margin-top: -2166px;
+  width: 50%;
+  height: 148px;
+  z-index: 20;
+  margin-left: 39px;
+  padding-bottom: 10px;
+  font-family: var(--font-jost);
+  font-size: var(--font-size-medium);
+  color: var(--color-text-light);
+  background-color: #eee9e1;
+  border-radius: 20px;
+}
+
+/* Legend Layout Components */
+.categorie,
+.categorieshape {
+  display: flex;
+  flex-direction: column;
+  height: 132px;
+}
+
+.categorie {
+  width: auto;
+  padding-left: var(--spacing-medium);
+  padding-top: var(--spacing-medium);
+  padding-right: var(--spacing-medium);
+}
+
+.categorieshape {
+  margin-top: 6px;
+}
+
+.element_texte {
+  display: flex;
+  align-items: center;
+  margin: 2px;
+  width: auto;
+}
+
+.typeDesign {
+  display: flex;
+  padding-left: 0px;
+}
+
+/* ==================== LEGEND COLOR BARS ==================== */
+
+/* Shared styles for all legend bars */
+.element_ligne_1,
+.element_ligne1,
+.element_ligne2,
+.element_ligne3,
+.element_ligne4,
+.element_ligne5,
+.element_ligne6,
+.element_ligne7 {
+  height: 7px;
+  width: 27px;
+  margin-top: var(--spacing-xlarge);
+}
+
+/* Special case for first element */
+.element_ligne_1 {
+  margin-top: var(--spacing-large);
+  height: 5px;
+  width: 25px;
+  background-color: var(--color-other);
+}
+
+/* Category-specific colors */
+.element_ligne1 {
+  background-color: var(--color-architecture);
+}
+
+.element_ligne2 {
+  background-color: var(--color-mobilier);
+}
+
+.element_ligne3 {
+  background-color: var(--color-graphique);
+}
+
+.element_ligne4 {
+  background-color: var(--color-objet);
+}
+
+.element_ligne5 {
+  background-color: var(--color-industriel);
+}
+
+.element_ligne6 {
+  background-color: var(--color-technologie);
+}
+
+.element_ligne7 {
+  background-color: var(--color-vestimentaire);
+}
+
+/* ==================== COMMENTED OUT SECTIONS ==================== */
+
+/* Uncomment these sections if needed:
+
+.merci {
+  position: absolute;
+  top: 12053px;
+  left: 1760px;
+  font-family: var(--font-jost);
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 69pt;
+  line-height: var(--line-height-base);
+  width: 1000px;
+  color: var(--color-text-light);
+}
+
+.widmer {
+  position: absolute;
+  top: 730px;
+  left: 61px;
+  font-family: var(--font-jost);
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-base);
+  width: 1000px;
+  color: var(--color-text-light);
+}
+
+.nom {
+  position: absolute;
+  top: 1064px;
+  left: 1195px;
+  font-family: var(--font-jost);
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 32pt;
+  line-height: var(--line-height-base);
+  width: 1300px;
+  color: var(--color-text-light);
+}
+
+*/

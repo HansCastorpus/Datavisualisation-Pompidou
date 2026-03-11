@@ -1,0 +1,586 @@
+/* CSS Variables for repeated values */
+:root {
+  /* Colors */
+  --color-background: #2a2626;
+  --color-objet: #8d2438;
+  --color-mobilier: #c6bca2;
+  --color-industriel: #e7a02c;
+  --color-vestimentaire: #1a4d8b;
+  --color-graphique: #da3035;
+  --color-technologie: #83b7ca;
+  --color-architecture: #91a879;
+  --color-text: #3b3531;
+  --color-text-dark: #635c58;
+  
+  /* Fonts */
+  --font-josefin: "Josefin Sans", sans-serif;
+  --font-bebas: "Bebas Neue", sans-serif;
+  
+  /* Transitions */
+  --transition-opacity: opacity 0.3s;
+  --transition-default: 0.3s;
+}
+
+/* Base Styles */
+.graph {
+  position: relative;
+  display: flex;
+  top: 1000px;
+}
+
+#body {
+  z-index: 20;
+  position: absolute;
+  top: -100px;
+  left: -70px;
+}
+
+.script {
+  z-index: 20;
+}
+
+/* Container Styles */
+.DecadeBarChartContainer {
+  border: solid 0px black;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  top: -854px;
+  left: 86px;
+  width: 3204px;
+  font-family: var(--font-josefin);
+  font-weight: 500;
+  font-size: 1.5em;
+  gap: 7px;
+}
+
+.DecadeBarChartContainer2 {
+  border: solid 0px black;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  top: -454px;
+  left: 86px;
+  font-family: var(--font-josefin);
+  font-size: 1.5em;
+  gap: 7px;
+}
+
+/* Quantity Labels */
+.CreationDecadeQuantity {
+  border: solid 0px black;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 12;
+  font-family: var(--font-bebas);
+  font-size: 1.5em;
+  left: 90px;
+  width: 3204px;
+  gap: 165px;
+  color: var(--color-text-dark);
+  top: 320px;
+}
+
+.AcquisitionDecadeQuantity {
+  border: solid 0px black;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 12;
+  font-family: var(--font-josefin);
+  font-weight: 500;
+  font-size: 1.5em;
+  font-weight: 400;
+  left: 90px;
+  width: 3204px;
+  gap: 165px;
+  color: var(--color-text-dark);
+  top: 751px;
+  z-index: 250;
+}
+
+/* Shared Bar Chart Styles */
+.DecadeBarChart1,
+.DecadeBarChart2,
+.DecadeBarChart3,
+.DecadeBarChart4,
+.DecadeBarChart5,
+.DecadeBarChart6,
+.DecadeBarChart7,
+.DecadeBarChart8,
+.DecadeBarChart9,
+.DecadeBarChart10,
+.DecadeBarChart11,
+.DecadeBarChart12,
+.DecadeBarChart13 {
+  position: relative;
+  background-color: var(--color-background);
+  transition: var(--transition-default);
+}
+
+.DecadeBarChartA1,
+.DecadeBarChartA2,
+.DecadeBarChartA3,
+.DecadeBarChartA4,
+.DecadeBarChartA5,
+.DecadeBarChartA6,
+.DecadeBarChartA7,
+.DecadeBarChartA8,
+.DecadeBarChartA9,
+.DecadeBarChartA10,
+.DecadeBarChartA11,
+.DecadeBarChartA12,
+.DecadeBarChartA13 {
+  position: relative;
+  background-color: var(--color-background);
+  transition: var(--transition-default);
+}
+
+/* Shared Detail Styles */
+[class*="DecadeBarChart1_Detail"] {
+  position: absolute;
+  opacity: 1;
+  /* filter: brightness(0.1); */
+  /* filter: grayscale(0.5); */
+  transition: var(--transition-opacity);
+}
+
+/* ==================== HOVER STATES ==================== */
+
+/* Creation Charts Hover */
+.Chart1:hover ~ .DecadeBarChart1 .DecadeBarChart1_Detail1 { opacity: 1; filter: grayscale(0);}
+.Chart2:hover ~ .DecadeBarChart2 .DecadeBarChart1_Detail2 { opacity: 1; filter: grayscale(0);}
+.Chart3:hover ~ .DecadeBarChart3 .DecadeBarChart1_Detail3 { opacity: 1; filter: grayscale(0);}
+.Chart4:hover ~ .DecadeBarChart4 .DecadeBarChart1_Detail4 { opacity: 1; filter: grayscale(0);}
+.Chart5:hover ~ .DecadeBarChart5 .DecadeBarChart1_Detail5 { opacity: 1; filter: grayscale(0);}
+.Chart6:hover ~ .DecadeBarChart6 .DecadeBarChart1_Detail6 { opacity: 1; filter: grayscale(0);}
+.Chart7:hover ~ .DecadeBarChart7 .DecadeBarChart1_Detail7 { opacity: 1; filter: grayscale(0);}
+.Chart8:hover ~ .DecadeBarChart8 .DecadeBarChart1_Detail8 { opacity: 1; filter: grayscale(0);}
+.Chart9:hover ~ .DecadeBarChart9 .DecadeBarChart1_Detail9 { opacity: 1; filter: grayscale(0);}
+.Chart10:hover ~ .DecadeBarChart10 .DecadeBarChart1_Detail10 { opacity: 1; filter: grayscale(0);}
+.Chart11:hover ~ .DecadeBarChart11 .DecadeBarChart1_Detail11 { opacity: 1; filter: grayscale(0);}
+.Chart12:hover ~ .DecadeBarChart12 .DecadeBarChart1_Detail12 { opacity: 1; filter: grayscale(0);}
+.Chart13:hover ~ .DecadeBarChart13 .DecadeBarChart1_Detail13 { opacity: 1; filter: grayscale(0);}
+
+/* Acquisition Charts Hover */
+.ChartA1:hover + .DecadeBarChartA1 .DecadeBarChart1_DetailA1 { opacity: 1; filter: grayscale(0);}
+.ChartA2:hover + .DecadeBarChartA2 .DecadeBarChart1_DetailA2 { opacity: 1; filter: grayscale(0);}
+.ChartA3:hover + .DecadeBarChartA3 .DecadeBarChart1_DetailA3 { opacity: 1; filter: grayscale(0);}
+.ChartA4:hover + .DecadeBarChartA4 .DecadeBarChart1_DetailA4 { opacity: 1; filter: grayscale(0);}
+.ChartA5:hover + .DecadeBarChartA5 .DecadeBarChart1_DetailA5 { opacity: 1; filter: grayscale(0);}
+.ChartA6:hover + .DecadeBarChartA6 .DecadeBarChart1_DetailA6 { opacity: 1; filter: grayscale(0);}
+.ChartA7:hover + .DecadeBarChartA7 .DecadeBarChart1_DetailA7 { opacity: 1; filter: grayscale(0);}
+.ChartA8:hover + .DecadeBarChartA8 .DecadeBarChart1_DetailA8 { opacity: 1; filter: grayscale(0);}
+.ChartA9:hover + .DecadeBarChartA9 .DecadeBarChart1_DetailA9 { opacity: 1; filter: grayscale(0);}
+.ChartA10:hover ~ .DecadeBarChartA10 .DecadeBarChart1_DetailA10,
+.ChartA10Bis:hover ~ .DecadeBarChartA10 .DecadeBarChart1_DetailA10 { opacity: 1; filter: grayscale(0);}
+.ChartA11:hover ~ .DecadeBarChartA11 .DecadeBarChart1_DetailA11,
+.ChartA11Bis:hover ~ .DecadeBarChartA11 .DecadeBarChart1_DetailA11 { opacity: 1; filter: grayscale(0);}
+.ChartA12:hover ~ .DecadeBarChartA12 .DecadeBarChart1_DetailA12,
+.ChartA12Bis:hover ~ .DecadeBarChartA12 .DecadeBarChart1_DetailA12 { opacity: 1; filter: grayscale(0);}
+.ChartA13:hover + .DecadeBarChartA13 .DecadeBarChart1_DetailA13 { opacity: 1; filter: grayscale(0);}
+
+/* Shared Chart Label Styles */
+.Chart1, .Chart2, .Chart3, .Chart4, .Chart5, .Chart6, .Chart7, .Chart8, .Chart9, .Chart10, .Chart11, .Chart12, .Chart13,
+.ChartA1, .ChartA2, .ChartA3, .ChartA4, .ChartA5, .ChartA6, .ChartA7, .ChartA8, .ChartA9, .ChartA10, .ChartA11, .ChartA12, .ChartA13,
+.ChartA10Bis, .ChartA11Bis, .ChartA12Bis {
+  color: var(--color-text);
+  position: relative;
+  cursor: cell;
+}
+
+.ChartA1, .ChartA2, .ChartA3, .ChartA4, .ChartA5, .ChartA6, .ChartA7, .ChartA8, .ChartA9, .ChartA10, .ChartA11, .ChartA12, .ChartA13,
+.ChartA10Bis, .ChartA11Bis, .ChartA12Bis {
+  z-index: 1000;
+}
+
+.Chart1, .Chart2, .Chart3, .Chart4, .Chart5, .Chart6, .Chart7, .Chart8, .Chart9, .Chart10, .Chart11, .Chart12, .Chart13 {
+  z-index: 100;
+}
+
+/* Category Color Classes */
+[class*="Objet"], [class*="A-Objet"] {
+  background-color: var(--color-objet);
+}
+
+[class*="Mobilier"], [class*="A-Mobilier"] {
+  background-color: var(--color-mobilier);
+}
+
+[class*="Industriel"], [class*="A-Industriel"] {
+  background-color: var(--color-industriel);
+}
+
+[class*="Vestimentaire"], [class*="A-Vestimentaire"] {
+  background-color: var(--color-vestimentaire);
+}
+
+[class*="Graphique"], [class*="A-Graphique"] {
+  background-color: var(--color-graphique);
+}
+
+[class*="Technologie"], [class*="A-Technologie"] {
+  background-color: var(--color-technologie);
+}
+
+[class*="Architecture"], [class*="A-Architecture"] {
+  background-color: var(--color-architecture);
+}
+
+/* ==================== CREATION CHARTS ==================== */
+
+/* Chart 1 */
+.DecadeBarChart1 { width: 189px; height: 48px; left: -33px; }
+.DecadeBarChart1_Detail1 { width: 189px; }
+.Objet1 { height: 48px; }
+.Mobilier1 { height: 27px; }
+.Industriel1 { height: 17px; }
+.Vestimentaire1 { height: 9px; }
+.Graphique1 { height: 2px; }
+.Technologie1 { height: 0px; }
+.Architecture1 { height: 0px; }
+.Chart1 { top: -48px; left: 82px; }
+
+/* Chart 2 */
+.DecadeBarChart2 { width: 171px; height: 43px; left: -65px; }
+.DecadeBarChart1_Detail2 { width: 171px; }
+.Objet2 { height: 43px; }
+.Mobilier2 { height: 17px; }
+.Industriel2 { height: 15px; }
+.Vestimentaire2 { height: 9px; }
+.Graphique2 { height: 8px; }
+.Chart2 { z-index: 200; top: -43px; left: 38px; }
+
+/* Chart 3 */
+.DecadeBarChart3 { width: 171.5px; height: 241px; left: -106px; }
+.DecadeBarChart1_Detail3 { width: 171.5px; }
+.Objet3 { height: 241px; }
+.Mobilier3 { height: 176px; }
+.Industriel3 { height: 66px; }
+.Vestimentaire3 { height: 57px; }
+.Graphique3 { height: 56px; }
+.Technologie3 { height: 0px; }
+.Architecture3 { height: 0px; }
+.Chart3 { top: -241px; left: 5px; }
+
+/* Chart 4 */
+.DecadeBarChart4 { width: 171px; height: 284px; left: -151.5px; }
+.DecadeBarChart1_Detail4 { width: 171px; }
+.Objet4 { height: 284px; }
+.Mobilier4 { height: 183px; }
+.Industriel4 { height: 62px; }
+.Vestimentaire4 { height: 28px; }
+.Graphique4 { height: 21px; }
+.Technologie4 { height: 0px; }
+.Architecture4 { height: 0px; }
+.Chart4 { top: -284px; left: -40px; }
+
+/* Chart 5 */
+.DecadeBarChart5 { width: 172px; height: 92px; left: -184px; }
+.DecadeBarChart1_Detail5 { width: 172px; }
+.Objet5 { height: 92px; }
+.Mobilier5 { height: 77px; }
+.Industriel5 { height: 36px; }
+.Vestimentaire5 { height: 0px; }
+.Graphique5 { height: 10px; }
+.Technologie5 { height: 0px; }
+.Architecture5 { height: 0px; }
+.Chart5 { left: -78px; top: -92px; }
+
+/* Chart 6 */
+.DecadeBarChart6 { width: 172px; height: 455px; left: -229.5px; }
+.DecadeBarChart1_Detail6 { width: 172px; }
+.Objet6 { height: 455px; }
+.Mobilier6 { height: 363px; }
+.Industriel6 { height: 228px; }
+.Vestimentaire6 { height: 0px; }
+.Graphique6 { height: 158px; }
+.Technologie6 { height: 11px; }
+.Architecture6 { height: 0px; }
+.Chart6 { top: -455px; left: -118px; }
+
+/* Chart 7 */
+.DecadeBarChart7 { width: 172px; height: 1076px; left: -284.5px; }
+.DecadeBarChart1_Detail7 { width: 172px; }
+.Objet7 { height: 1076px; }
+.Mobilier7 { height: 927px; }
+.Industriel7 { height: 767px; }
+.Vestimentaire7 { height: 616px; }
+.Graphique7 { height: 566px; }
+.Technologie7 { height: 4px; }
+.Architecture7 { height: 3px; }
+.Chart7 { left: -166px; top: -1076px; }
+
+/* Chart 8 */
+.DecadeBarChart8 { width: 171px; height: 1204px; left: -341px; }
+.DecadeBarChart1_Detail8 { width: 171px; }
+.Objet8 { height: 1204px; }
+.Mobilier8 { height: 1080px; }
+.Industriel8 { height: 944px; }
+.Vestimentaire8 { height: 820px; }
+.Graphique8 { height: 817px; }
+.Technologie8 { height: 0px; }
+.Architecture8 { height: 10px; }
+.Chart8 { left: -223px; top: -1204px; }
+
+/* Chart 9 */
+.DecadeBarChart9 { width: 172px; height: 1105px; left: -391px; }
+.DecadeBarChart1_Detail9 { width: 172px; }
+.Objet9 { height: 1105px; }
+.Mobilier9 { height: 901px; }
+.Industriel9 { height: 798px; }
+.Vestimentaire9 { height: 0px; }
+.Graphique9 { height: 737px; }
+.Technologie9 { height: 0px; }
+.Architecture9 { height: 3px; }
+.Chart9 { left: -277px; top: -1105px; }
+
+/* Chart 10 */
+.DecadeBarChart10 { width: 171px; height: 1126px; left: -440.5px; }
+.DecadeBarChart1_Detail10 { width: 171px; }
+.Objet10 { height: 1126px; }
+.Mobilier10 { height: 904px; }
+.Industriel10 { height: 766px; }
+.Vestimentaire10 { height: 679px; }
+.Graphique10 { height: 642px; }
+.Technologie10 { height: 14px; }
+.Architecture10 { height: 4px; }
+.Chart10 { left: -328px; top: -1126px; }
+
+/* Chart 11 */
+.DecadeBarChart11 { width: 171px; height: 1008px; left: -497.5px; }
+.DecadeBarChart1_Detail11 { width: 171px; }
+.Objet11 { height: 1008px; }
+.Mobilier11 { height: 834px; }
+.Industriel11 { height: 666px; }
+.Vestimentaire11 { height: 586px; }
+.Graphique11 { height: 569px; }
+.Technologie11 { height: 11px; }
+.Architecture11 { height: 1px; }
+.Chart11 { left: -379px; top: -1008px; }
+
+/* Chart 12 */
+.DecadeBarChart12 { width: 170.5px; height: 1128px; left: -545.5px; }
+.DecadeBarChart1_Detail12 { width: 170.5px; }
+.Objet12 { height: 1128px; }
+.Mobilier12 { height: 969px; }
+.Industriel12 { height: 913px; }
+.Vestimentaire12 { height: 893px; }
+.Graphique12 { height: 886px; }
+.Technologie12 { height: 71px; }
+.Architecture12 { height: 15px; }
+.Chart12 { left: -435px; top: -1128px; }
+
+/* Chart 13 */
+.DecadeBarChart13 { width: 29px; height: 20px; left: -580px; }
+.DecadeBarChart1_Detail13 { width: 29px; }
+.Objet13 { height: 20px; }
+.Mobilier13 { height: 18px; }
+.Industriel13 { height: 0px; }
+.Vestimentaire13 { height: 17px; }
+.Graphique13 { height: 0px; }
+.Technologie13 { height: 0px; }
+.Architecture13 { height: 7px; }
+.Chart13 { left: -545px; top: -20px; }
+
+/* ==================== ACQUISITION CHARTS ==================== */
+
+/* Chart A1 */
+.DecadeBarChartA1 { width: 100px; height: 8px; left: 69px; }
+.DecadeBarChart1_DetailA1 { width: 100px; }
+.A-Objet1 { height: 8px; }
+.A-Mobilier1 { height: 0px; }
+.A-Industriel1 { height: 0px; }
+.A-Vestimentaire1 { height: 0px; }
+.A-Graphique1 { height: 0px; }
+.A-Technologie1 { height: 0px; }
+.A-Architecture1 { height: 0px; }
+.ChartA1 { top: 12px; left: 134px; }
+
+/* Chart A2 */
+.DecadeBarChartA2 { width: 171px; height: 14px; left: 41.8px; }
+.DecadeBarChart1_DetailA2 { width: 171px; }
+.A-Objet2 { height: 14px; }
+.A-Mobilier2 { height: 0px; }
+.A-Industriel2 { height: 0px; }
+.A-Vestimentaire2 { height: 0px; }
+.A-Graphique2 { height: 2px; }
+.A-Technologie2 { height: 0px; }
+.A-Architecture2 { height: 0px; }
+.ChartA2 { top: 18px; left: 143px; }
+
+/* Chart A3 */
+.DecadeBarChartA3 { width: 171.5px; height: 17px; left: 15.1px; }
+.DecadeBarChart1_DetailA3 { width: 171.5px; }
+.A-Objet3 { height: 17px; }
+.A-Mobilier3 { height: 0px; }
+.A-Industriel3 { height: 0px; }
+.A-Vestimentaire3 { height: 1px; }
+.A-Graphique3 { height: 0px; }
+.A-Technologie3 { height: 0px; }
+.A-Architecture3 { height: 0px; }
+.ChartA3 { top: 21px; left: 116px; }
+
+/* Chart A4 */
+.DecadeBarChartA4 { width: 171.5px; height: 28px; left: -17px; }
+.DecadeBarChart1_DetailA4 { width: 171.5px; }
+.A-Objet4 { height: 28px; }
+.A-Mobilier4 { height: 11px; }
+.A-Industriel4 { height: 0px; }
+.A-Vestimentaire4 { height: 7px; }
+.A-Graphique4 { height: 0px; }
+.A-Technologie4 { height: 0px; }
+.A-Architecture4 { height: 0px; }
+.ChartA4 { top: 32px; left: 88px; }
+
+/* Chart A5 */
+.DecadeBarChartA5 { width: 172px; height: 6px; left: -37px; }
+.DecadeBarChart1_DetailA5 { width: 171.5px; }
+.A-Objet5 { height: 6px; }
+.A-Mobilier5 { height: 1px; }
+.A-Industriel5 { height: 0px; }
+.A-Vestimentaire5 { height: 0px; }
+.A-Graphique5 { height: 0px; }
+.A-Technologie5 { height: 0px; }
+.A-Architecture5 { height: 0px; }
+.ChartA5 { left: 62px; top: 10px; }
+
+/* Chart A6 */
+.DecadeBarChartA6 { width: 172px; height: 60px; left: -72.5px; }
+.DecadeBarChart1_DetailA6 { width: 171.5px; }
+.A-Objet6 { height: 60px; }
+.A-Mobilier6 { height: 1px; }
+.A-Industriel6 { height: 0px; }
+.A-Vestimentaire6 { height: 1px; }
+.A-Graphique6 { height: 0px; }
+.A-Technologie6 { height: 0px; }
+.A-Architecture6 { height: 0px; }
+.ChartA6 { left: 38px; top: 63px; }
+
+/* Chart A7 */
+.DecadeBarChartA7 { width: 172px; height: 32px; left: -105.2px; }
+.DecadeBarChart1_DetailA7 { width: 172px; }
+.A-Objet7 { height: 32px; }
+.A-Mobilier7 { height: 25px; }
+.A-Industriel7 { height: 23px; }
+.A-Vestimentaire7 { height: 19px; }
+.A-Graphique7 { height: 18px; }
+.A-Technologie7 { height: 0px; }
+.A-Architecture7 { height: 1px; }
+.ChartA7 { left: 2px; top: 36px; }
+
+/* Chart A8 */
+.DecadeBarChartA8 { width: 171px; height: 102px; left: -148.5px; }
+.DecadeBarChart1_DetailA8 { width: 171px; }
+.A-Objet8 { height: 102px; }
+.A-Mobilier8 { height: 98px; }
+.A-Industriel8 { height: 0px; }
+.A-Vestimentaire8 { height: 0px; }
+.A-Graphique8 { height: 91px; }
+.A-Technologie8 { height: 0px; }
+.A-Architecture8 { height: 1px; }
+.ChartA8 { left: -35px; top: 106px; }
+
+/* Chart A9 */
+.DecadeBarChartA9 { width: 172px; height: 19px; left: -175.5px; }
+.DecadeBarChart1_DetailA9 { width: 172px; }
+.A-Objet9 { height: 19px; }
+.A-Mobilier9 { height: 15px; }
+.A-Industriel9 { height: 0px; }
+.A-Vestimentaire9 { height: 0px; }
+.A-Graphique9 { height: 8px; }
+.A-Technologie9 { height: 0px; }
+.A-Architecture9 { height: 0px; }
+.ChartA9 { left: -72px; top: 23px; }
+
+/* Chart A10 */
+.DecadeBarChartA10 { width: 171px; height: 1842px; left: -283.3px; }
+.DecadeBarChart1_DetailA10 { width: 172px; }
+.A-Objet10 { height: 1842px; }
+.A-Mobilier10 { height: 1539px; }
+.A-Industriel10 { height: 1198px; }
+.A-Vestimentaire10 { height: 839px; }
+.A-Graphique10 { height: 756px; }
+.A-Technologie10 { height: 12px; }
+.A-Architecture10 { height: 5px; }
+.ChartA10 { left: -115px; top: 1846px; }
+.ChartA10Bis { top: 292px; left: -567px; }
+
+/* Chart A11 */
+.DecadeBarChartA11 { width: 171.2px; height: 1803px; left: -392.3px; }
+.DecadeBarChart1_DetailA11 { width: 171.2px; }
+.A-Objet11 { height: 1803px; }
+.A-Mobilier11 { height: 1426px; }
+.A-Industriel11 { height: 972px; }
+.A-Vestimentaire11 { height: 719px; }
+.A-Graphique11 { height: 689px; }
+.A-Technologie11 { height: 21px; }
+.A-Architecture11 { height: 13px; }
+.ChartA11 { left: -220px; top: 1807px; }
+.ChartA11Bis { top: 292px; left: -782px; }
+
+/* Chart A12 */
+.DecadeBarChartA12 { margin-left: 1px; width: 171px; height: 3378px; left: -504.2px; }
+.DecadeBarChart1_DetailA12 { width: 171px; }
+.A-Objet12 { height: 3378px; }
+.A-Mobilier12 { height: 3207px; }
+.A-Industriel12 { height: 2914px; }
+.A-Vestimentaire12 { height: 0px; }
+.A-Graphique12 { height: 2864px; }
+.A-Technologie12 { height: 66px; }
+.A-Architecture12 { height: 13px; }
+.ChartA12 { left: -327px; top: 3382px; }
+.ChartA12Bis { top: 292px; left: -999px; }
+
+/* Chart A13 */
+.DecadeBarChartA13 { width: 46px; height: 207px; left: -550.5px; }
+.DecadeBarChart1_DetailA13 { width: 46px; }
+.A-Objet13 { height: 207px; }
+.A-Mobilier13 { height: 149px; }
+.A-Industriel13 { height: 78px; }
+.A-Vestimentaire13 { height: 70px; }
+.A-Graphique13 { height: 57px; }
+.A-Technologie13 { height: 37px; }
+.A-Architecture13 { height: 10px; }
+.ChartA13 { left: -499px; top: 211px; }
+
+/* ==================== UTILITY ELEMENTS ==================== */
+
+.DesignDetail {
+  position: relative;
+  top: 1500px;
+  left: 100px;
+}
+
+.underline {
+  position: relative;
+  border: solid 1px var(--color-mobilier);
+  width: 330px;
+  top: 320px;
+  left: -1486px;
+}
+
+.line1 {
+  position: relative;
+  border: solid 1px var(--color-mobilier);
+  height: 15px;
+  top: 304px;
+  left: -1757px;
+}
+
+.line2 {
+  position: relative;
+  border: solid 1px var(--color-mobilier);
+  height: 15px;
+  top: 304px;
+  left: -1695px;
+}
+
+.info_line {
+  top: 304px;
+  left: -1695px;
+  position: relative;
+}
