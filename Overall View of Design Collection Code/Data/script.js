@@ -64,7 +64,7 @@ var uniqueDataTotalTextCreation = Array.from(
 
     var fontHighlight = "19";
 
-    var fontHighlightOrigin = "75";
+    var fontHighlightOrigin = "35";
   
     var lineColor = "#677c6e";
   
@@ -424,7 +424,7 @@ group5
       .append("text")
       .attr("fill", fontColor)
       .style("font-family", "Josefin Sans, sans-serif")
-      .attr("y", 465)
+      .attr("y", 472)
       .attr("x", function (d) {
         return widthScale(d.Acquisition);
       })
@@ -442,7 +442,7 @@ group5
       .enter()
       .append("text")
       .attr("fill", fontColor)
-      .attr("y", 110)
+      .attr("y", 80)
       .attr("x", function (d) {
         return widthScale(d.Creation);
       })
