@@ -286,9 +286,10 @@ body {
 .Total {
   position: absolute;
   top: 7744px;
-  left: 3px;
-  transform: scale(0.95);
+  left: 423px;
+  /* transform: scale(1); */
   z-index: 1000;
+  padding-bottom: 50px;
 }
 
 .logo {
@@ -320,12 +321,13 @@ body {
 
 .total_background {
   position: relative;
-  background-color: var(--color-background-light);
+  /* background-color: var(--color-background-light); */
   width: 2349px;
   height: 2019px;
   top: 5904px;
   left: 8px;
   border-radius: var(--radius-large);
+  z-index: 1;
 }
 
 /* ==================== LEGEND ==================== */
