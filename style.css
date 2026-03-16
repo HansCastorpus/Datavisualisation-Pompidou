@@ -71,7 +71,7 @@
 @media (max-width: 1470px) {
   :root {
     --scale-factor: 0.65; /* Slightly smaller */
-    --left-position: 10px;
+    --left-position: 20px;
     --top-position: 0px;
   }
 }
