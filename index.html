@@ -50,6 +50,10 @@
 
         <div class="titre">Une Visualisation Graphique<br> de la Collection de Design</div>
 
+        <div style="position: fixed; top: 0; right: 0; background: red; color: white; padding: 10px; z-index: 99999;">
+  Screen: <span id="screen-width"></span>px
+</div>
+
         <!-- <div class="nom">Paul-Arthur Lemarquis</div> -->
 
 
@@ -235,3 +239,9 @@
                     une vue chromatique et temporelle de chaque pièce. Cet élément interactif permet également au
                     spectateur de survoler chaque pièce, affichant toutes les informations concernant la pièce dans une
                     infobulle. -->
+<script>
+  document.getElementById('screen-width').textContent = window.innerWidth;
+  window.addEventListener('resize', function() {
+    document.getElementById('screen-width').textContent = window.innerWidth;
+  });
+</script>
