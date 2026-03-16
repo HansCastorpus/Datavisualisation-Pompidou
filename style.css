@@ -49,6 +49,15 @@
 
 /* ==================== MEDIA QUERIES ==================== */
 
+/* ==================== MEDIA QUERIES ==================== */
+
+/* Large screens - Default */
+:root {
+  --scale-factor: 0.9;
+  --left-position: 200px;
+  --top-position: 0;
+}
+
 /* Medium screens - 1920px */
 @media (max-width: 1920px) {
   :root {
@@ -62,6 +71,15 @@
 @media (max-width: 1440px) {
   :root {
     --scale-factor: 0.594;
+    --left-position: 2px;
+    --top-position: 0;
+  }
+}
+
+/* MacBook Air 13" - 1280px */
+@media (max-width: 1280px) {
+  :root {
+    --scale-factor: 0.51;
     --left-position: 2px;
     --top-position: 0;
   }
