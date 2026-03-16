@@ -70,8 +70,8 @@
 /* MacBook Air 13" - 1280px */
 @media (max-width: 1470px) {
   :root {
-    --scale-factor: 0.65; /* Slightly smaller */
-    --left-position: 20px;
+    --scale-factor: 0.60; /* Slightly smaller */
+    --left-position: 10px;
     --top-position: 0px;
   }
 }
